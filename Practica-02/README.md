@@ -11,7 +11,7 @@ Los elementos creados fueron:
  - Casa de campaña
 
 ## Evidencia 1
-![Escritorio de trabajo 01](workspace_evidence-01.jpg)
+![Escritorio de trabajo 01](workspace_evidence-01.JPG)
 
 ## Evidencia 2
-![Escritorio de trabajo 02](workspace_evidence-02.jpg)
+![Escritorio de trabajo 02](workspace_evidence-02.JPG)

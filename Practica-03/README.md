@@ -4,7 +4,7 @@ En este apartado se muestra el desarrollo de la tercera práctica que consiste e
 El personaje creado es un gato.
 
 ## Evidencia 1
-![Escritorio de trabajo 01](workspace_evidence-01.jpg)
+![Escritorio de trabajo 01](workspace_evidence-01.JPG)
 
 ## Evidencia 2
-![Escritorio de trabajo 02](workspace_evidence-02.jpg)
+![Escritorio de trabajo 02](workspace_evidence-02.JPG)
