@@ -1,0 +1,122 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/Kenney Mini Square Mono.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/button_normal.png" type="Texture" id=2]
+[ext_resource path="res://assets/button_hover.png" type="Texture" id=3]
+[ext_resource path="res://assets/button_pressed.png" type="Texture" id=4]
+[ext_resource path="res://assets/button_focused.png" type="Texture" id=5]
+[ext_resource path="res://src/UserInterface/SceneChangingButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/UserInterface/user_interface_theme.tres" type="Theme" id=7]
+[ext_resource path="res://assets/menu_background.png" type="Texture" id=8]
+[ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=30]
+
+[sub_resource type="StyleBoxTexture" id=31]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 48, 16 )
+margin_left = 5.0
+margin_right = 5.0
+
+[sub_resource type="StyleBoxTexture" id=32]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 48, 16 )
+margin_left = 5.0
+margin_right = 5.0
+
+[sub_resource type="StyleBoxTexture" id=33]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 48, 16 )
+margin_left = 5.0
+margin_right = 5.0
+
+[sub_resource type="StyleBoxTexture" id=34]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 48, 16 )
+margin_left = 5.0
+margin_right = 5.0
+
+[sub_resource type="DynamicFont" id=35]
+size = 8
+extra_spacing_bottom = 4
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=36]
+default_font = SubResource( 35 )
+Button/colors/font_color = Color( 1, 1, 1, 1 )
+Button/colors/font_color_focus = Color( 1, 1, 1, 1 )
+Button/colors/font_color_hover = Color( 0.666667, 0.666667, 0.666667, 1 )
+Button/colors/font_color_pressed = Color( 0.666667, 0.666667, 0.666667, 1 )
+Button/styles/disabled = SubResource( 30 )
+Button/styles/focus = SubResource( 31 )
+Button/styles/hover = SubResource( 32 )
+Button/styles/normal = SubResource( 33 )
+Button/styles/pressed = SubResource( 34 )
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -93.0
+margin_top = -89.0
+margin_right = 107.0
+margin_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_constants/separation = 30
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+margin_right = 200.0
+margin_bottom = 41.0
+theme = ExtResource( 7 )
+custom_constants/line_spacing = -5
+text = "Practica 07
+Diaz Ortega Rodrigo
+Simulación por Computadora
+David Bonilla"
+align = 1
+autowrap = true
+
+[node name="Menu" type="Control" parent="VBoxContainer"]
+margin_left = 71.0
+margin_top = 71.0
+margin_right = 129.0
+margin_bottom = 119.0
+rect_min_size = Vector2( 58, 48 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 8 )
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -24.0
+margin_top = -18.0
+margin_right = 24.0
+margin_bottom = 18.0
+alignment = 1
+
+[node name="PlayButton" parent="VBoxContainer/Menu/VBoxContainer" instance=ExtResource( 6 )]
+theme = SubResource( 36 )
+text = "Play"
+initial_focus = true
+scene_path = "res://src/World/Levels/LevelOne.tscn"
+
+[node name="QuitButton" parent="VBoxContainer/Menu/VBoxContainer" instance=ExtResource( 9 )]
+margin_top = 20.0
+margin_bottom = 36.0
